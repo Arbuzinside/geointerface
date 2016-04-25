@@ -297,10 +297,12 @@
             var formData = JSON.stringify(getFormData($("#input")));
             $.ajax({
                 type: "POST",
-                url: "http://localhost:8080/service",
+                url: "http://130.149.223.140:8080/geoindex/service",
                 data: formData,
                 success: function(result){
-                   $(".calc-result").find("textarea").val(result["values"].toArray().toString());
+
+
+                    $(".calc-result").find("textarea").val(JSON.stringify(result["values"]));
                 },
                 dataType: "json",
                 contentType : "application/json"
